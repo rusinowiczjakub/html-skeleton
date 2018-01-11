@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: auto;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+
+header {
+    /*background: #0b58a2;*/
+    height: 100vh;
+    position: relative;
+    /*width: 100vh;*/
+    border-bottom: 2px solid white;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    /*background-image: url("cedric-servay-138372.jpg");*/
+    background-image: linear-gradient(to right, rgba(103, 178, 111, .4), rgba(76, 162, 205, .4)), url("cedric-servay-138372.jpg");
+    background-size: 100% 100%;
+
+}
+
+.triangle__right-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 190px 50vw;
+    border-color: transparent transparent white transparent;
+
+}
+
+.triangle__left-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 190px 0 0 50vw;
+    border-color: transparent transparent transparent white;
+
+}
+
+.triangle__top {
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 180px 50vw 0 50vw;
+    border-color: white transparent transparent transparent;
+    z-index: 10;
+    /*position: absolute;*/
+    /*position: absolute;*/
+
+}
+
+section {
+    background: white;
+    width: 100%;
+    height: 25vh;
+    position: relative;
+}
+
+#first {
+    border-top: 2px solid white;
+}
+
+#second {
+    height: auto;
+    min-height: 70vh;
+    position: relative;
+    background: transparent;
+}
+
+.img__left {
+    background-image: url(aj_ms_54345_1.jpg);
+    background-size: cover;
+    box-shadow:inset 0 0 0 100vh rgba(0, 0, 0 , .5);
+    height: auto;
+    min-height: 70vh;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+.img__right {
+    background-image: url(26755535_1718373544893754_166893392_n.jpg);
+    background-size: cover;
+    box-shadow:inset 0 0 0 100vh rgba(0, 0, 0 , .5);
+    height: auto;
+    min-height: 70vh;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -2;
+}
+
+.img__gradient {
+    position: absolute;
+    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, .9), transparent);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+}
+
+.gallery {
+    background: white;
+    width: 700px;
+    height: 400px;
+    margin: 50px auto;
+    /*display: flex;*/
+}
