@@ -1,0 +1,27 @@
+#first {
+    border-top: 2px solid white;
+    background: white;
+    width: 100%;
+    height: auto;
+    position: relative;
+
+        .single__cost {
+          display: flex;
+          margin-top: 50px;
+
+        .costs_icon {
+          width: 80px;
+          height: auto;
+          align-self: center;
+          margin-right: 20px;
+          margin-left: 20px;
+        }
+
+        .single__cost-text {
+          width: 60%;
+          margin-left: 30px;
+          margin-right: 10px;
+        }
+    }
+
+}
