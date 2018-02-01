@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
+    <title>Łukasińskiego 4</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
@@ -77,42 +77,52 @@
         <h2>Lokalizacja</h2>
         <hr>
       </div>
-      <div class="">
-        <h3>Ogrodzone osiedle</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel placerat urna. Cras feugiat vel enim vitae scelerisque. Sed bibendum auctor ipsum in tincidunt. Nunc et magna non est pretium laoreet quis porta odio. Nunc viverra a lorem eget cursus. Vestibulum dapibus egestas hendrerit. </p>
-        <h3>Sprawdź na mapie obiekty w poblizu</h3>
-        <img src="icons/shopping-cart.png" onclick="chooseType(this)" data-type="store" width="50" height="50">
-        <img src="icons/restaurant.png" onclick="chooseType(this)" data-type="restaurant" width="50" height="50">
+      <div class="section__content">
+        <div class="section__content-description">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel placerat urna. Cras feugiat vel enim vitae scelerisque. Sed bibendum auctor ipsum in tincidunt. Nunc et magna non est pretium laoreet quis porta odio. Nunc viverra a lorem eget cursus. Vestibulum dapibus egestas hendrerit. </p>
+          <div class="icon_show-map">
+            <img src="icons/map.png">
+            <button class="btn-map">Pokaż mapę</button>
+          </div>
+        </div>
+        <div id="map-control">
+          <h3>Zobacz na mapie obiekty w pobliżu</h3>
+          <div class="map-control__icons">
+            <div>
+              <p>Sklepy</p>
+              <img src="icons/shopping-cart.png" onclick="chooseType(this)" data-type="store" width="40" height="40">
+            </div>
+            <div>
+              <p>Restauracje</p>
+              <img src="icons/restaurant.png" onclick="chooseType(this)" data-type="restaurant" width="40" height="40">
+            </div>
+            <div>
+              <p>Siłownie</p>
+              <img src="icons/gym.png" onclick="chooseType(this)" data-type="gym" width="40" height="40">
+            </div>
+            <div>
+              <p>Kawiarnie</p>
+              <img src="icons/cup-of-tea.png" onclick="chooseType(this)" data-type="cafe" width="40" height="40">
+            </div>
+          </div>
+        </div>
+        <div id="map"></div>
       </div>
-      <div id="map">
+      <div class="triangle__right-bottom"></div>
+      <div class="triangle__left-bottom"></div>
+    </section>
+    <section id="third">
+      <div class="section__header">
+        <h2>Rezerwacja</h2>
+        <hr>
       </div>
     </section>
-    <!-- <section id="second">
-        <div class="triangle__top"></div>
-            <div class="gallery">
-                    <img class="gallery__img" src="images/strona_1.jpg" alt="placeholder image"/>
-
-
-                    <img class="gallery__img" src="images/strona_2.jpg" alt="placeholder image"/>
-
-
-                    <img class="gallery__img" src="images/strona_3.jpg" alt="placeholder image"/>
-
-
-                    <img class="gallery__img" src="images/strona_4.jpg" alt="placeholder image"/>
-
-
-                    <img class="gallery__img" src="images/strona_5.jpg" alt="placeholder image"/>
-
-
-                    <img class="gallery__img" src="images/strona_6.jpg" alt="placeholder image"/>
-            </div>
-    </section> -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="js/navbarScroll.js" type="text/javascript"></script>
 <script src="js/navbarCollapse.js" type="text/javascript"></script>
 <script src="js/smoothScroll.js" type="text/javascript"></script>
 <script src="js/googleMap.js" type="text/javascript"></script>
+<script src="js/mapSection.js" type="text/javascript"></script>
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpsA-_iuigd4yHtEdoPSg-KlcToZS62H0&callback=initMap&libraries=places">
 </script>
