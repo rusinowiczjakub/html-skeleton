@@ -29,7 +29,7 @@ function initMap() {
   var marker = new google.maps.Marker({
     title: 'Nasz aparatament',
     position: lukasinskiego,
-    icon: '../icons/placeholder.png',
+    icon: '/placeholder.png',
     map: map
   });
 }
