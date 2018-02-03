@@ -9,75 +9,133 @@ var hourElements;
 
 $(document).ready(function() {
   month.empty();
+
   for (var i = 0; i <= 12; i++) {
+
     if (i === 0) {
       month.append('<option value=>' + 'Wybierz miesiąc' + '</option>');
       continue;
     }
+
     month.append('<option value=' + i + '>' + i + '</option>');
   }
 
   month.change(function() {
     day.empty()
+
     if (month.val() <= 7) {
+
       if (month.val() == 2) {
-        for (var i = 1; i <= 28; i++) {
-          day.append('<option value=' + i + '>' + i + '</option>');
-            console.log('dupa');
+
+        for (var i = 0; i <= 28; i++) {
+
+          if (i === 0) {
+              day.append('<option value=>' + 'Wybierz dzień' + '</option>');
+              continue;
+          }
+
+            day.append('<option value=' + i + '>' + i + '</option>');
         }
+
+        return;
       }
 
-      if (month.val() % 2 == 0 && month.val() !== 2) {
-        for (var i = 1; i <= 30; i++) {
-          day.append('<option value=' + i + '>' + i + '</option>');
+      if (month.val() % 2 == 0 && month.val() != 2) {
+
+        for (var i = 0; i <= 30; i++) {
+          if (i === 0) {
+              day.append('<option value=>' + 'Wybierz dzień' + '</option>');
+              continue;
+          }
+            day.append('<option value=' + i + '>' + i + '</option>');
         }
+
+        return;
       } else {
-        for (var i = 1; i <= 31; i++) {
-          day.append('<option value=' + i + '>' + i + '</option>');
-            console.log('dupa');
+
+        for (var i = 0; i <= 31; i++) {
+
+          if (i === 0) {
+              day.append('<option value=>' + 'Wybierz dzień' + '</option>');
+              continue;
+          }
+
+            day.append('<option value=' + i + '>' + i + '</option>');
         }
+        return;
       }
     }
 
     if (month.val() > 7) {
+
       if (month.val() % 2 == 0) {
-        for (var i = 1; i <= 31; i++) {
-          day.append('<option value=' + i + '>' + i + '</option>');
+
+        for (var i = 0; i <= 31; i++) {
+
+            if (i === 0) {
+                day.append('<option value=>' + 'Wybierz dzień' + '</option>');
+                continue;
+            }
+
+            day.append('<option value=' + i + '>' + i + '</option>');
         }
+
       } else {
-        for (var i = 1; i <= 30; i++) {
-          day.append('<option value=' + i + '>' + i + '</option>');
+
+        for (var i = 0; i <= 30; i++) {
+
+          if (i === 0) {
+              day.append('<option value=>' + 'Wybierz dzień' + '</option>');
+              continue;
+          }
+
+            day.append('<option value=' + i + '>' + i + '</option>');
         }
+
       }
     }
   });
 
   day.change(function() {
 
+    $('p[data-hour-time]').fadeOut(500, function () {
+      $(this).remove()
+    });
+    $('.choose-hour').fadeOut(500, function () {
+        $(this).remove()
+    });
+
     var data = {
       days: day.val(),
       months: month.val()
-    }
+    };
 
     $.ajax({
       url: 'src/reservationAvailability.php',
       type: 'GET',
       data: data,
       success: function(response) {
+
         $('.resp-message').remove();
         var resp = $.parseJSON(response);
-        if (resp.status === 0) {
 
+        if (resp.status === 0) {
           var respMessage = $('<p class="resp-message">' + resp.message + '</p>');
+
+          respMessage.hide();
           respMessage.insertAfter(form);
+          respMessage.fadeIn(300);
 
         } else {
 
           var headerTag = $('<h3 class="choose-hour"> Wybierz godzinę: </h3>');
-          headerTag.insertBefore(respMessage);
+          // headerTag.insertBefore(respMessage);
+
           var hoursDiv = $('.hoursDiv');
 
+          headerTag.hide();
           headerTag.insertAfter(form);
+          headerTag.fadeIn(300);
 
           resp.data.forEach(function(el, index) {
 
@@ -88,14 +146,19 @@ $(document).ready(function() {
             respMessage = $('<p data-hour-time="'+ hours + ':' + minutes +'"">'+ hours + ':' + minutes +'</p>');
             respMessage.appendTo(hoursDiv);
           });
+
         }
+
       }
+
     });
 
     setTimeout(function () {
+
       hourElements = $('.hoursDiv > p');
 
       hourElements.on('click', function(event) {
+
         clickedElement = $(event.target);
         clickedElement.siblings().css('color', '');
         clickedElement.siblings().css('font-size', '');
@@ -117,6 +180,7 @@ $(document).ready(function() {
         }
 
         $('.submit').click(function () {
+
           $.ajax({
             url: 'src/reservationAvailability.php',
             type: 'POST',
@@ -135,7 +199,9 @@ $(document).ready(function() {
         });
 
       });
+
     }, 50);
 
   });
+
 });
