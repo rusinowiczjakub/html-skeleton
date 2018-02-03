@@ -18,11 +18,12 @@ $(document).ready(function() {
   }
 
   month.change(function() {
-
+    day.empty()
     if (month.val() <= 7) {
       if (month.val() == 2) {
         for (var i = 1; i <= 28; i++) {
           day.append('<option value=' + i + '>' + i + '</option>');
+            console.log('dupa');
         }
       }
 
@@ -33,6 +34,7 @@ $(document).ready(function() {
       } else {
         for (var i = 1; i <= 31; i++) {
           day.append('<option value=' + i + '>' + i + '</option>');
+            console.log('dupa');
         }
       }
     }
