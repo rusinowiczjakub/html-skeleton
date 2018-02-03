@@ -1,0 +1,16 @@
+#fifth {
+  border-top: 2px solid white;
+  background: white;
+  width: 100%;
+  position: relative;
+  height: auto;
+
+  .section__content-description {
+    color: white;
+    font-weight: 600;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 22px;
+    background-image: linear-gradient(to right, rgba(103, 178, 111, 1), rgba(76, 162, 205, 1));
+  }
+}

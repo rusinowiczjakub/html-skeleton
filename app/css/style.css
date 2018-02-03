@@ -131,8 +131,9 @@ header {
   header .bg-img {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to right, rgba(103, 178, 111, 0.4), rgba(76, 162, 205, 0.4)), url("../cedric-servay-138372.jpg");
-    background-size: 100% 100%; }
+    background-image: linear-gradient(to right, rgba(103, 178, 111, 0.4), rgba(76, 162, 205, 0.4)), url("../Arboretum2.jpg");
+    background-size: cover;
+    background-position: 30% 50%; }
   header .header__arrows {
     position: absolute;
     bottom: 10px;
@@ -146,6 +147,8 @@ header {
       -moz-animation: bounce 2s infinite;
       -webkit-animation: bounce 2s infinite;
       animation: bounce 2s infinite; }
+      header .header__arrows :first-child a {
+        display: block; }
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -176,16 +179,27 @@ header {
       margin-left: 30px;
       margin-right: 25px; }
 
-#second .gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row; }
-  #second .gallery .gallery__img {
-    width: 100px;
-    height: auto;
-    align-self: center;
-    margin: 10px 10px 0 10px; }
+#fourth {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(103, 178, 111, 0.5), rgba(76, 162, 205, 0.5));
+  height: auto;
+  text-align: center; }
+  #fourth #photos {
+    height: 100%;
+    line-height: 0;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 5;
+    -moz-column-gap: 0px;
+    column-count: 5;
+    column-gap: 0px; }
+    #fourth #photos img {
+      width: 90% !important;
+      height: auto !important;
+      margin: 5px 5px 5px 5px;
+      transition: all 0.5s; }
+    #fourth #photos img:hover {
+      width: 94% !important; }
 
 .triangle__right-bottom {
   position: absolute;
@@ -256,7 +270,6 @@ header {
 
 #second {
   border-top: 2px solid white;
-  background: white;
   width: 100%;
   position: relative;
   height: auto;
@@ -300,9 +313,18 @@ header {
           color: white; }
 
 #third {
-  height: auto; }
+  height: auto;
+  position: relative; }
   #third .section__content {
     text-align: center; }
+    #third .section__content .section__content-description {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 22px;
+      background-image: linear-gradient(to right, #67b26f, #4ca2cd);
+      font-weight: 600; }
     #third .section__content .reservation-form {
       margin: 0 auto;
       display: flex;
@@ -355,10 +377,25 @@ header {
       font-weight: 600;
       border-radius: 100px;
       transition: 0.2s linear;
-      margin-top: 20px; }
+      margin-top: 20px;
+      margin-bottom: 35px; }
       #third .section__content .btn-outline:hover {
         background: linear-gradient(to right, rgba(103, 178, 111, 0.4), rgba(76, 162, 205, 0.4));
         background: -webkit-gradient(to right, rgba(103, 178, 111, 0.4), rgba(76, 162, 205, 0.4));
         background: -webkit-linear-gradient(to right, rgba(103, 178, 111, 0.4), rgba(76, 162, 205, 0.4));
         background: -moz-linear-gradient(to right, rgba(103, 178, 111, 0.4), rgba(76, 162, 205, 0.4));
         color: white; }
+
+#fifth {
+  border-top: 2px solid white;
+  background: white;
+  width: 100%;
+  position: relative;
+  height: auto; }
+  #fifth .section__content-description {
+    color: white;
+    font-weight: 600;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 22px;
+    background-image: linear-gradient(to right, #67b26f, #4ca2cd); }

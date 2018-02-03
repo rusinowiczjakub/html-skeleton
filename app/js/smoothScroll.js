@@ -6,12 +6,14 @@ $(document).ready(function(){
             }, 800);
     });
 
-    $("li a").click(function(e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scroll: $(this).offset()
-        }, 2000, 'linear');
-    });
+    console.log($('.arrow-scroll'));
+
+    // $("li a").click(function(e) {
+    //     e.preventDefault();
+    //     $('html, body').animate({
+    //         scroll: $(this).offset()
+    //     }, 2000, 'linear');
+    // });
     // $('a[href^="#"]').on('click',function (e) {
     //     e.preventDefault();
     //
