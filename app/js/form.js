@@ -9,6 +9,7 @@ var hourElements;
 
 $(document).ready(function() {
   month.empty();
+  day.empty();
 
   for (var i = 0; i <= 12; i++) {
 

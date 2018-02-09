@@ -4,6 +4,40 @@
   height: auto;
   text-align: center;
 
+  .section__content-description {
+  }
+
+  .slider {
+      border: 0;
+
+      div {
+          width: 100vw !important;
+          position: relative;
+          height: 400px;
+          text-align: center;
+          // display: flex;
+          // flex-direction: row;
+
+          img {
+              width: 250px;
+              height: auto;
+              margin: 30px auto;
+              border-radius: 10px;
+          }
+
+          p {
+              font-weight: 600;
+              color: white;
+              margin-bottom: 10px;
+          }
+      }
+  }
+  .bx-wrapper {
+      border: none;
+      background: transparent;
+
+  }
+
   #photos {
     height: 100%;
     line-height: 0;
@@ -26,4 +60,5 @@
       width: 94% !important;
     }
   }
-}
+
+  }

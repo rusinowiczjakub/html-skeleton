@@ -2,6 +2,7 @@
 
 
 class Term implements JsonSerializable {
+
     private $id;
     private $date;
     private $reserved;
@@ -193,7 +194,7 @@ class Term implements JsonSerializable {
 
 }
 
-
+$term = new Term(1, '2012-03-01', )
 //var_dump(Term::loadFreeTermsByDate('2018-02-03', Term::setConnetcion()));
 
 Term::loadSingleFreeTerm('2018-02-03 18:00', Term::setConnetcion());

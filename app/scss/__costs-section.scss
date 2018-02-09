@@ -4,11 +4,19 @@
     width: 100%;
     height: auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
 
-        .single__cost {
-          display: flex;
-          margin: 70px auto;
-          justify-content: center;
+//desktop
+    // .first__content {
+    //     display: flex;
+    //     flex-direction: row;
+    // }
+
+    .single__cost {
+      display: flex;
+      margin: 70px auto;
+      justify-content: center;
 
         .costs_icon {
           width: 80px;

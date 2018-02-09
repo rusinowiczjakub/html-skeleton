@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $date = '2018-' . $month . '-' . $day;
 
-
     $freeTerms = Term::loadFreeTermsByDate($date, Term::setConnetcion());
 
     $res = [];

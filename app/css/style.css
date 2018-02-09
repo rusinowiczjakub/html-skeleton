@@ -163,7 +163,9 @@ header {
   background: white;
   width: 100%;
   height: auto;
-  position: relative; }
+  position: relative;
+  display: flex;
+  flex-direction: column; }
   #first .single__cost {
     display: flex;
     margin: 70px auto;
@@ -184,6 +186,25 @@ header {
   background: linear-gradient(to bottom, rgba(103, 178, 111, 0.5), rgba(76, 162, 205, 0.5));
   height: auto;
   text-align: center; }
+  #fourth .slider {
+    border: 0; }
+    #fourth .slider div {
+      width: 100vw !important;
+      position: relative;
+      height: 400px;
+      text-align: center; }
+      #fourth .slider div img {
+        width: 250px;
+        height: auto;
+        margin: 30px auto;
+        border-radius: 10px; }
+      #fourth .slider div p {
+        font-weight: 600;
+        color: white;
+        margin-bottom: 10px; }
+  #fourth .bx-wrapper {
+    border: none;
+    background: transparent; }
   #fourth #photos {
     height: 100%;
     line-height: 0;
