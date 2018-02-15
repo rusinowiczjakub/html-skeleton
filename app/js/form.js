@@ -6,23 +6,59 @@ var form = $('.reservation-form');
 var respMessage;
 var dateToSend;
 var hourElements;
+var monthName;
+var monthsAJAX = [];
+var monthsTab = [
+    "Wybierz miesiąc",
+    "styczeń",
+    "luty",
+    "marzec",
+    "kwiecień",
+    "maj",
+    "czerwiec",
+    "lipiec",
+    "sierpień",
+    "wrzesień",
+    "pażdziernik",
+    "listopad",
+    "grudzień"
+];
 
 $(document).ready(function() {
   month.empty();
   day.empty();
 
-  for (var i = 0; i <= 12; i++) {
+    $.ajax({
+        url: 'src/getFreeTerms.php',
+        type: 'GET',
+        data: {month: null},
+        success: function (response) {
+            var resp = $.parseJSON(response);
+            for (var i = 0; i < (resp.data).length; i++) {
+                var date = new Date(resp.data[i].date);
+                monthsAJAX.push(date.getMonth()+1);
+                $.unique(monthsAJAX);
+            }
+        }
+    }).then(function(){
+        for (var i = 0; i <= 12; i++) {
+            month.append('<option value='+i+'>' + monthsTab[i] + '</option>');
+            if (monthsAJAX.indexOf(i) != -1) {
+                var option = $('.monthSelect option[value=' + i + ']');
+                option.css('color', '#2980b9');
+                option.css('font-weight', '600');
+            }
+            day.empty();
+          }
+    });
 
-    if (i === 0) {
-      month.append('<option value=>' + 'Wybierz miesiąc' + '</option>');
-      continue;
-    }
-
-    month.append('<option value=' + i + '>' + i + '</option>');
-  }
 
   month.change(function() {
     day.empty()
+
+    if (month.val() === 0) {
+        day.empty();
+    }
 
     if (month.val() <= 7) {
 
@@ -100,7 +136,7 @@ $(document).ready(function() {
   day.change(function() {
 
     $('p[data-hour-time]').fadeOut(500, function () {
-      $(this).remove()
+        $(this).remove()
     });
     $('.choose-hour').fadeOut(500, function () {
         $(this).remove()
@@ -152,14 +188,11 @@ $(document).ready(function() {
 
       }
 
-    });
-
-    setTimeout(function () {
-
+  }).then(function() {
       hourElements = $('.hoursDiv > p');
-
+      console.log(hourElements);
       hourElements.on('click', function(event) {
-
+          console.log(event.target);
         clickedElement = $(event.target);
         clickedElement.siblings().css('color', '');
         clickedElement.siblings().css('font-size', '');
@@ -200,8 +233,7 @@ $(document).ready(function() {
         });
 
       });
-
-    }, 50);
+  });
 
   });
 

@@ -55,6 +55,29 @@ class Term implements JsonSerializable {
         return false;
     }
 
+    public static function loadTermsByMonth()
+    {
+        $conn = Term::setConnetcion();
+        $query = "SELECT * FROM term WHERE MONTH(date) BETWEEN 1 AND 12" ;
+
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $res = [];
+        foreach ($result as $r) {
+            $loadedTerm = new Term();
+            $loadedTerm->setId($r['id']);
+            $loadedTerm->setDate($r['date']);
+            $loadedTerm->setReserved($r['reserved']);
+
+            $res[] = $loadedTerm;
+        }
+
+
+        return $res;
+    }
+
     public function loadClosestFreeTerms()
     {
 
@@ -194,7 +217,7 @@ class Term implements JsonSerializable {
 
 }
 
-$term = new Term(1, '2012-03-01', )
+// $term = new Term(1, '2012-03-01', )
 //var_dump(Term::loadFreeTermsByDate('2018-02-03', Term::setConnetcion()));
 
-Term::loadSingleFreeTerm('2018-02-03 18:00', Term::setConnetcion());
+// Term::loadSingleFreeTerm('2018-02-03 18:00', Term::setConnetcion());
