@@ -365,6 +365,9 @@ header {
         margin-top: 0;
         width: 20%;
         flex: 1 1; }
+        #third .section__content .reservation-form select[name="day"] option, #third .section__content .reservation-form select[name="month"] option {
+          background: rgba(103, 178, 111, 0.3);
+          border: none; }
       #third .section__content .reservation-form ::-webkit-input-placeholder {
         color: rgba(0, 0, 0, 0.6); }
       #third .section__content .reservation-form p {

@@ -31,12 +31,18 @@
         height: 35px;
         width: 100%;
         text-align: center;
+
       }
 
       select[name="day"], select[name="month"] {
         margin-top: 0;
         width: 20%;
         flex: 1 1;
+
+        option {
+            background: rgba(103, 178, 111, .3);
+            border: none;
+        }
 
       }
 
