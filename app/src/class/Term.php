@@ -1,7 +1,8 @@
 <?php
 
 
-class Term implements JsonSerializable {
+class Term implements JsonSerializable
+{
 
     private $id;
     private $date;
@@ -9,7 +10,8 @@ class Term implements JsonSerializable {
     private $person;
     private $conn;
 
-    public function __construct(DateTime $date = null, $reserved = null, Person $person = null) {
+    public function __construct(DateTime $date = null, $reserved = null, Person $person = null)
+    {
         $this->id = -1;
         $this->date = $date;
         $this->reserved = $reserved;
@@ -83,7 +85,8 @@ class Term implements JsonSerializable {
 
     }
 
-    public static function loadSingleFreeTerm($fullDate, $conn) {
+    public static function loadSingleFreeTerm($fullDate, $conn)
+    {
 
         $query = "
         SELECT * FROM term
@@ -102,6 +105,44 @@ class Term implements JsonSerializable {
         $loadedTerm->setReserved($result['reserved']);
 
         return $loadedTerm;
+    }
+
+    public static function loadReservedTerms() {
+        $conn = Term::setConnetcion();
+
+        $query = "
+        SELECT term.id AS term_id, term.date, term.reserved, person.id AS person_id, person.name, person.phone, person.email
+        FROM term
+        INNER JOIN person ON term.person_id = person.id
+        ORDER BY term.date ASC;
+        ";
+
+        $stmt = $conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $res = [];
+
+        if ($result > 0) {
+            foreach ($result as $row) {
+                $loadedTerm = new Term();
+                $loadedTerm->setId($row['term_id']);
+                $loadedTerm->setDate($row['date']);
+                $loadedTerm->setReserved($row['reserved']);
+
+                $termPerson = new Person();
+                $termPerson->setId($row['person_id']);
+                $termPerson->setName($row['name']);
+                $termPerson->setEmail($row['email']);
+                $termPerson->setPhone($row['phone']);
+
+                $loadedTerm->setPerson($termPerson);
+
+                $res[] = $loadedTerm;
+            }
+        }
+
+        return $res;
     }
 
     public static function loadFreeTermsByDate(string $date, $conn)
@@ -210,7 +251,13 @@ class Term implements JsonSerializable {
         return [
             'id' => $this->id,
             'date' => $this->date,
-            'reserved' => $this->reserved
+            'reserved' => $this->reserved,
+            'person' => [
+                'id' => $this->person->getId(),
+                'name' => $this->person->getName(),
+                'phone' => $this->person->getPhone(),
+                'email' => $this->person->getEmail()
+            ]
         ];
     }
 

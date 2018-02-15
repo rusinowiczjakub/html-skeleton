@@ -138,7 +138,7 @@ section {
   height: calc(100vh - 100px); }
   section #contentPlace {
     position: absolute;
-    height: auto;
+    height: 100px;
     left: 0;
     right: 0;
     opacity: 0;

@@ -12,9 +12,6 @@ $(document).ready(function() {
         })
         .done(function(data) {
             contentPlace.html(data).animate({opacity: '1', top: '0'}, 600);
-        });
-
-
             var month = $('select[name=month]');
             var day = $('select[name=day]');
 
@@ -97,6 +94,7 @@ $(document).ready(function() {
                     }
                 }
             });
+        });
     });
 });
 
