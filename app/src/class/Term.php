@@ -107,15 +107,25 @@ class Term implements JsonSerializable
         return $loadedTerm;
     }
 
-    public static function loadReservedTerms() {
+    public static function loadReservedTerms($month = null) {
         $conn = Term::setConnetcion();
 
-        $query = "
-        SELECT term.id AS term_id, term.date, term.reserved, person.id AS person_id, person.name, person.phone, person.email
-        FROM term
-        INNER JOIN person ON term.person_id = person.id
-        ORDER BY term.date ASC;
-        ";
+        if ($month == null) {
+            $query = "
+            SELECT term.id AS term_id, term.date, term.reserved, person.id AS person_id, person.name, person.phone, person.email
+            FROM term
+            INNER JOIN person ON term.person_id = person.id
+            ORDER BY term.date ASC;
+            ";
+        } else {
+            $query = "
+            SELECT term.id AS term_id, term.date, term.reserved, person.id AS person_id, person.name, person.phone, person.email
+            FROM term
+            INNER JOIN person ON term.person_id = person.id
+            WHERE MONTH(date) = $month
+            ORDER BY term.date ASC;
+            ";
+        }
 
         $stmt = $conn->prepare($query);
         $stmt->execute();

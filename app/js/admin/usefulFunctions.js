@@ -9,4 +9,27 @@ function changeContent(callback) {
 }
 
 
-// function 
+function sortDatesByMonth(datesArray)
+{
+    var months = [
+        "styczeń",
+        "luty",
+        "marzec",
+        "kwiecień",
+        "maj",
+        "czerwiec",
+        "lipiec",
+        "sierpień",
+        "wrzesień",
+        "październik",
+        "listopad",
+        "grudzień",
+    ]
+
+    // for (var i = 0; i <= datesArray.length; i++) {
+    //     var month = new Date(datesArray[i]);
+    //     var allTerms = [
+    //         months[i] =>
+    //     ]
+    // }
+}

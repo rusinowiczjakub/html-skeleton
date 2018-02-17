@@ -8,6 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
 
     $reservedTerms = Term::loadReservedTerms();
 
+    if (isset($_GET['month'])) {
+        $reservedTerms = Term::loadReservedTerms($_GET['month']);
+    }
+
     if (count($reservedTerms) > 0) {
         echo json_encode([
             'status' => 1,
