@@ -138,7 +138,7 @@ section {
   height: calc(100vh - 100px); }
   section #contentPlace {
     position: absolute;
-    height: 100px;
+    height: auto;
     left: 0;
     right: 0;
     opacity: 0;
@@ -172,3 +172,13 @@ section {
       height: 0;
       margin-right: 55px;
       margin-left: 45px; }
+
+.months-grid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 150px 150px 150px;
+  align-self: center;
+  justify-content: center;
+  grid-row-gap: 5ch; }
+  .months-grid div h3 {
+    color: #2980b9; }

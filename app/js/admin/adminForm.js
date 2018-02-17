@@ -2,8 +2,8 @@ var singleTermLink = $('#singleTermAdd');
 var contentPlace = $('#contentPlace');
 
 $(document).ready(function() {
-
     singleTermLink.click(function() {
+        contentPlace.removeAttr('style');
         contentPlace.empty();
         $.ajax({
             url: 'html/addTermForm.html',
@@ -97,10 +97,3 @@ $(document).ready(function() {
         });
     });
 });
-
-
-function generateHours(){
-    for (var i = 1; i <= 24; i++) {
-        console.log("0"+i)
-    }
-}

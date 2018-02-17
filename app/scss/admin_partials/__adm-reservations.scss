@@ -1,0 +1,15 @@
+.months-grid {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 150px 150px 150px;
+    align-self: center;
+    justify-content: center;
+    grid-row-gap: 5ch;
+    // align-items: center;
+
+    div {
+        h3 {
+            color: #2980b9;
+        }
+    }
+}

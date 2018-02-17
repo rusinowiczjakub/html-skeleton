@@ -1,9 +1,12 @@
 function changeContent(callback) {
     var contentPlace = $('#contentPlace');
-
-    contentPlace.animate({opacity: 0, top: "-100px"}, 600, null, function() {
-        $(this).empty();
+    contentPlace.removeAttr('style');
+    contentPlace.empty();
+    contentPlace.animate({opacity: 1, top: "0px"}, 600, null, function() {
     });
 
     callback();
 }
+
+
+// function 
