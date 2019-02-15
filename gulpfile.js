@@ -3,10 +3,11 @@ var browserSync = require('browser-sync').create();
 var serve = require('gulp-serve');
 var sass = require('gulp-sass');
 
-gulp.watch('files-to-watch', ['tasks', 'to', 'run']);
+gulp.task( 'default', [ 'serve' ] )
 
 gulp.task('watch', function(){
   gulp.watch('app/scss/**/*.scss', ['sass']);
+  gulp.watch('app/scss/partials/*.scss', ['sass']);
   // Other watchers
 })
 
@@ -34,8 +35,8 @@ gulp.task('serve', ['sass'], function() {
     });
 
     gulp.watch("app/scss/*.scss", ['sass']);
-    gulp.watch("app/scss/admin_partials/*.scss", ['sass']);
-    gulp.watch("app/js/*.js", ['sass']);
+    gulp.watch("app/scss/partials/*.scss", ['sass']);
+    gulp.watch("app/js/*.js", ['js']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 

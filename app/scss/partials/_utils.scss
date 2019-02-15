@@ -1,0 +1,32 @@
+.--mobile {
+  @media screen and (min-width: 200px){
+    display: block;
+  }
+
+  @media screen and (min-width: 720px){
+    display: none;
+  }
+}
+
+.--tablet {
+  @media screen and (min-width: 200px){
+    display: none;
+  }
+  @media screen and (min-width: 720px){
+    display: block;
+  }
+}
+
+.--desktop {
+  @media screen and (min-width: 1024px){
+    display: block;
+  }
+}
+
+ul {
+  list-style: none;
+
+  li {
+    list-style: none;
+  }
+}

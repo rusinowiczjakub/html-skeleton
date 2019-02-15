@@ -6,7 +6,6 @@
 
 @font-face {
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-    src: url("../fonts/Raleway-Medium.otf");
 }
 
 html, body {
@@ -17,13 +16,11 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    height: 100vh;
+}
 
-
-@import "__navbar";
-@import "__header";
-@import "__costs-section";
-@import "__gallery-section";
-@import "__partials";
-@import "__localization-section";
-@import "__reservation-section";
-@import "__contact-section";
+@import "partials/variables";
+@import "partials/layout";
+@import "partials/utils";
+@import "partials/buttons";
