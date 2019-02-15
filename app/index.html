@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Łukasińskiego 4</title>
+    <title>Snapme.io</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-
+<div class="loading__container" id="loader">
+    <div class="loader__overlay">
+        <div class="Loader"></div>
+    </div>
+</div>
 <nav>
-        <div class="button --default --round" id="nav__toggler">
-            <i class="fal fa-bars"></i>
-        </div>
+    <div class="button --default --round" id="nav__toggler">
+        <i class="fal fa-bars"></i>
+    </div>
 </nav>
 
 <aside id="sidebar__left">
@@ -23,15 +27,38 @@
         <li><i class="fal fa-search"></i></li>
     </ul>
 </aside>
-<!--<aside id="sidebar__right">-->
-<!--<ul>-->
-<!--<li>Snapchat <i class="fab fa-snapchat"></i></li>-->
-<!--<li>Instagram <i class="fab fa-instagram"></i></li>-->
-<!--<li>Twitter <i class="fab fa-twitter"></i></li>-->
-<!--</ul>-->
-<!--</aside>-->
+<aside id="sidebar__right">
+    <ul>
+        <li>Snapchat <i class="fab fa-snapchat"></i></li>
+        <li>Instagram <i class="fab fa-instagram"></i></li>
+        <li>Twitter <i class="fab fa-twitter"></i></li>
+    </ul>
+</aside>
 <section id="content">
     content
 </section>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        var loader = document.getElementById('loader');
+        var toggler = document.getElementById('nav__toggler');
+        var sidebar = document.getElementById('sidebar__right');
+        console.log(sidebar.style);
+        setTimeout(function () {
+            loader.style.opacity = '0';
+        }, 2500);
+
+        toggler.addEventListener('click', function () {
+            if (sidebar.style.right === '0') {
+                sidebar.style.right = '-100%';
+            } else {
+                sidebar.style.right === '0';
+            }
+            // sidebar.style.right = '0px';
+        })
+    })
+
+
+</script>
 </body>
 </html>

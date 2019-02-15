@@ -8,7 +8,7 @@
     "gulp": "./node_modules/.bin/gulp --watch"
   },
   "repository": {
-    "type": "git",
+    "type": "git"
   },
   "author": "Jakub Rusinowicz",
   "license": "ISC",
