@@ -4,6 +4,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  color: #c1c1c1;
+  font-family: Lato;
 
   ul {
     display: flex;
@@ -34,16 +36,33 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: 1s ease-in;
-  right: -100%;
-  //transform: translateX(100%);
+  transition: .7s cubic-bezier(.17,.67,.83,.67);
+  transform: perspective(400px) rotateY(0);
+  transform-origin: right;
+  color: #c1c1c1;
+  //font-family: Lato;
 
   ul {
     display: flex;
     justify-content: center;
-    height: 80%;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-items: flex-start;
+    height: 100%;
+    width: 80%;
     flex-direction: column;
-    align-items: center;
+
+    li {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 90px;
+    }
+  }
+
+  &.is-active {
+    transform: rotateY(180deg);
   }
 }
 
@@ -60,4 +79,10 @@ nav {
     align-items: center;
 
   }
+}
+
+#main-wrapper {
+  overflow-x: hidden;
+  height: 100%;
+  position: relative;
 }
