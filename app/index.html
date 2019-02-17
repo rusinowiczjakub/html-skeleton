@@ -6,6 +6,7 @@
     <title>Snapme.io</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
 </head>
 <body>
 <div id="main-wrapper">
@@ -36,7 +37,42 @@
         </ul>
     </aside>
     <section id="content">
-        content
+        <div class="container">
+            <div class="card card-custom bg-white border-white border-0 m-3">
+                <div class="card-custom-img"
+                     style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                <div class="card-custom-avatar">
+                    <img class="img-fluid"
+                         src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                         alt="Avatar"/>
+                </div>
+                <div class="card-body" style="overflow-y: auto">
+                    <h4 class="card-title">Card title</h4>
+                </div>
+                <div class="card-footer" style="background: inherit; border-color: inherit;">
+                    <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                    <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                    <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                </div>
+            </div>
+            <div class="card card-custom bg-white border-white border-0 m-3">
+                <div class="card-custom-img"
+                     style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                <div class="card-custom-avatar">
+                    <img class="img-fluid"
+                         src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                         alt="Avatar"/>
+                </div>
+                <div class="card-body" style="overflow-y: auto">
+                    <h4 class="card-title">Card title</h4>
+                </div>
+                <div class="card-footer" style="background: inherit; border-color: inherit;">
+                    <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                    <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                    <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                </div>
+            </div>
+        </div>
     </section>
 </div>
 <script type="text/javascript">
@@ -47,9 +83,9 @@
         console.log(sidebar.style);
         setTimeout(function () {
             loader.style.opacity = '0';
+            loader.style.display = 'none'
         }, 2500);
 
-        sidebar.style.transform = window.getComputedStyle(sidebar).transform;
         toggler.addEventListener('click', function () {
             sidebar.classList.toggle('is-active')
         })

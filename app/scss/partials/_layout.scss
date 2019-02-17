@@ -1,3 +1,5 @@
+@import "variables";
+
 #sidebar__left {
   position: absolute;
   bottom: 0;
@@ -5,7 +7,8 @@
   display: flex;
   justify-content: center;
   color: #c1c1c1;
-  font-family: Lato;
+  z-index: $left-sidebar-z-index;
+  height: $left-sidebar-height;
 
   ul {
     display: flex;
@@ -36,8 +39,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: .7s cubic-bezier(.17,.67,.83,.67);
-  transform: perspective(400px) rotateY(0);
+  transition: .3s ease-out;
+  transform: translateX(100%);
   transform-origin: right;
   color: #c1c1c1;
   //font-family: Lato;
@@ -62,7 +65,7 @@
   }
 
   &.is-active {
-    transform: rotateY(180deg);
+    transform: translateX(0);
   }
 }
 
@@ -83,6 +86,14 @@ nav {
 
 #main-wrapper {
   overflow-x: hidden;
+  overflow-y: hidden;
   height: 100%;
+  position: relative;
+}
+
+#content {
+  overflow-y: scroll;
+  height: calc(100% - #{$left-sidebar-height});
+  width: 100%;
   position: relative;
 }

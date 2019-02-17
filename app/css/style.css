@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url(bootstrap/dist/css/bootstrap.min.css);
 * {
   padding: 0;
   margin: 0;
@@ -19,7 +20,8 @@ html, body {
   display: flex;
   justify-content: center;
   color: #c1c1c1;
-  font-family: Lato; }
+  z-index: 100;
+  height: 50px; }
   #sidebar__left ul {
     display: flex;
     flex-direction: row;
@@ -44,8 +46,8 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: 0.7s cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  transform: perspective(400px) rotateY(0);
+  transition: .3s ease-out;
+  transform: translateX(100%);
   transform-origin: right;
   color: #c1c1c1; }
   #sidebar__right ul {
@@ -64,7 +66,7 @@ html, body {
       align-items: center;
       height: 90px; }
   #sidebar__right.is-active {
-    transform: rotateY(180deg); }
+    transform: translateX(0); }
 
 nav #nav__toggler {
   position: absolute;
@@ -79,7 +81,14 @@ nav #nav__toggler {
 
 #main-wrapper {
   overflow-x: hidden;
+  overflow-y: hidden;
   height: 100%;
+  position: relative; }
+
+#content {
+  overflow-y: scroll;
+  height: calc(100% - 50px);
+  width: 100%;
   position: relative; }
 
 @media screen and (min-width: 200px) {
@@ -187,3 +196,48 @@ ul {
   100% {
     box-shadow: 0 0 0 1.1rem #0023ff;
     opacity: 1; } }
+
+.card-custom {
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3); }
+  .card-custom i {
+    color: #c1c1c1; }
+  .card-custom .card-body {
+    display: block;
+    flex: 0; }
+
+.card-custom-img {
+  height: 200px;
+  min-height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-color: inherit; }
+
+/* First border-left-width setting is a fallback */
+.card-custom-img::after {
+  position: absolute;
+  content: '';
+  top: 161px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-top-width: 40px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 545px;
+  border-left-width: calc(575px - 5vw);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: inherit; }
+
+.card-custom-avatar img {
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  position: absolute;
+  top: 100px;
+  left: 1.25rem;
+  width: 100px;
+  height: 100px; }

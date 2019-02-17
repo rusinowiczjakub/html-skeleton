@@ -19,12 +19,20 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('sass', function() {
-  return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
+  return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'app/scss/**/*.scss']) // Gets all files ending with .scss in app/scss
     .pipe(sass())
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
+});
+
+gulp.task('js', function() {
+    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js'])
+        .pipe(gulp.dest("app/js"))
+        .pipe(browserSync.reload({
+            stream: true
+    }));
 });
 
 gulp.task('serve', ['sass'], function() {
