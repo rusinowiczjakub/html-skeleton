@@ -1,19 +1,19 @@
 .--mobile {
   @media screen and (min-width: 0px){
-    display: flex;
+    display: flex !important;
   }
 
   @media screen and (min-width: 720px){
-    display: none !important;
+    display: none;
   }
 }
 
 .--tablet {
-  //@media screen and (min-width: 200px){
-  //  display: none;
-  //}
+  @media screen and (min-width: 200px){
+    display: none;
+  }
   @media screen and (min-width: 720px){
-    display: flex;
+    display: flex !important;
   }
 }
 
@@ -22,7 +22,7 @@
     display: none;
   }
   @media screen and (min-width: 1024px){
-    display: block;
+    display: flex !important;
   }
 }
 

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="scss/partials/_buttons.scss">
 </head>
 <body>
 <div id="main-wrapper">
@@ -22,12 +23,13 @@
     </nav>
 
     <aside id="sidebar__left">
-        <div class="--tablet">Logo</div>
         <ul>
+            <li class="--tablet --desktop">
+                <div>Logo</div>
+            </li>
             <li><i class="fal fa-home"></i></li>
             <li><i class="fal fa-user-alt"></i></li>
             <li><i class="fal fa-search"></i></li>
-            <li class="--desktop"><div class="filters__toggler --desktop"><i class="fal fa-filter"></i></div></li>
         </ul>
     </aside>
     <aside id="sidebar__right">
@@ -38,7 +40,7 @@
         </ul>
     </aside>
     <aside id="sidebar__filters">
-        <div class="filters__toggler --mobile --tablet"><i class="fal fa-filter"></i></div>
+        <div class="filters__toggler --desktop --mobile --tablet"><i class="fal fa-filter"></i></div>
         <div class="form-group" id="ageGroup">
             <div>Wiek</div>
             <label>
@@ -69,60 +71,221 @@
                 </select>
             </div>
             <div class="form-group">
+                <div>Typ konta</div>
+                <select class="form-control" id="account_type">
+                    <option selected>Snapchat</option>
+                    <option value="1">Instagram</option>
+                    <option value="2">Twitter</option>
+                    <option value="3">Facebook</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <div>Preferencje</div>
                 <div>
-                        <input class="checkbox" id="eighteen-plus" type="checkbox" value="value1">
-                        <label for="eighteen-plus">18+</label>
-                        <input class="checkbox" id="sexting" type="checkbox" value="value1">
-                        <label for="sexting">Sexting</label>
-                        <input class="checkbox" id="lookfor-boys" type="checkbox" value="value1">
-                        <label for="lookfor-boys">Mężczyźni</label>
-                        <input class="checkbox" id="lookfor-girls" type="checkbox" value="value1">
-                        <label for="lookfor-girls">Kobiety</label>
+                    <input class="checkbox" id="eighteen-plus" type="checkbox" value="value1">
+                    <label for="eighteen-plus">18+</label>
+                    <input class="checkbox" id="sexting" type="checkbox" value="value1">
+                    <label for="sexting">Sexting</label>
+                    <input class="checkbox" id="lookfor-boys" type="checkbox" value="value1">
+                    <label for="lookfor-boys">Mężczyźni</label>
+                    <input class="checkbox" id="lookfor-girls" type="checkbox" value="value1">
+                    <label for="lookfor-girls">Kobiety</label>
                 </div>
             </div>
         </div>
     </aside>
     <section id="content">
         <div class="container">
-            <div class="form-group m-3">
-                <label for="tags_input">Szukaj tagów
-                    <input type="text" name="tags" id="tags_input" class="form-control" data-role="tagsinput">
-                </label>
-                <button class="button --default --primary --hover">Szukaj</button>
-            </div>
-            <div class="card card-custom bg-white border-white border-0 m-3">
-                <div class="card-custom-img"
-                     style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
-                <div class="card-custom-avatar">
-                    <img class="img-fluid"
-                         src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
-                         alt="Avatar"/>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body" style="overflow-y: auto">
-                    <h4 class="card-title">Card title</h4>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer" style="background: inherit; border-color: inherit;">
-                    <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
-                    <span class="comments"><i class="fal fa-comment"></i> 12</span>
-                    <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card card-custom bg-white border-white border-0 m-3">
-                <div class="card-custom-img"
-                     style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
-                <div class="card-custom-avatar">
-                    <img class="img-fluid"
-                         src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
-                         alt="Avatar"/>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body" style="overflow-y: auto">
-                    <h4 class="card-title">Card title</h4>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer" style="background: inherit; border-color: inherit;">
-                    <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
-                    <span class="comments"><i class="fal fa-comment"></i> 12</span>
-                    <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card card-custom bg-white border-white border-0 m-3">
+                        <div class="card-custom-img"
+                             style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid"
+                                 src="http://res.cloudinary.com/d3/image/upload/c_pad,g_center,h_200,q_auto:eco,w_200/bootstrap-logo_u3c8dx.jpg"
+                                 alt="Avatar"/>
+                        </div>
+                        <div class="card-body" style="overflow-y: auto">
+                            <h4 class="card-title">Card title</h4>
+                        </div>
+                        <div class="card-footer" style="background: inherit; border-color: inherit;">
+                            <span class="like"><i style="color: red;" class="fas fa-heart "></i> 123</span>
+                            <span class="comments"><i class="fal fa-comment"></i> 12</span>
+                            <span class="go-to-arrow float-right"><i class="fal fa-arrow-right fa-2x"></i></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,7 +309,7 @@
         var filtersToggler = document.getElementsByClassName('filters__toggler');
         var filtersSidebar = document.getElementById('sidebar__filters');
 
-        for (var i =0; i < filtersToggler.length; i++) {
+        for (var i = 0; i < filtersToggler.length; i++) {
             filtersToggler[i].addEventListener('click', function () {
                 filtersSidebar.classList.toggle('is-active');
             });
