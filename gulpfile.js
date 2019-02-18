@@ -3,7 +3,7 @@ var browserSync = require('browser-sync').create();
 var serve = require('gulp-serve');
 var sass = require('gulp-sass');
 
-gulp.task( 'default', [ 'serve' ] )
+gulp.task( 'default', [ 'serve' ] );
 
 gulp.task('watch', function(){
   gulp.watch('app/scss/**/*.scss', ['sass']);
@@ -19,7 +19,7 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('sass', function() {
-  return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'app/scss/**/*.scss']) // Gets all files ending with .scss in app/scss
+  return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'app/scss/**/*.scss', "node_modules/bootstrap-tagsinput/src/bootstrap-tagsinput.css"]) // Gets all files ending with .scss in app/scss
     .pipe(sass())
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
@@ -28,14 +28,14 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js'])
+    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.slim.js', 'node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js'])
         .pipe(gulp.dest("app/js"))
         .pipe(browserSync.reload({
             stream: true
     }));
 });
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass', 'js'], function() {
 
     browserSync.init({
         server: "./app",

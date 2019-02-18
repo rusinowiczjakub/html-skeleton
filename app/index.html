@@ -27,6 +27,7 @@
             <li><i class="fal fa-home"></i></li>
             <li><i class="fal fa-user-alt"></i></li>
             <li><i class="fal fa-search"></i></li>
+            <li class="--desktop"><div class="filters__toggler --desktop"><i class="fal fa-filter"></i></div></li>
         </ul>
     </aside>
     <aside id="sidebar__right">
@@ -36,8 +37,60 @@
             <li>Twitter <i class="fab fa-twitter fa-3x"></i></li>
         </ul>
     </aside>
+    <aside id="sidebar__filters">
+        <div class="filters__toggler --mobile --tablet"><i class="fal fa-filter"></i></div>
+        <div class="form-group" id="ageGroup">
+            <div>Wiek</div>
+            <label>
+                <select class="form-control" id="ageFrom">
+                    <option selected>From</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </label>
+            <label>
+                <select class="form-control" id="ageTo">
+                    <option selected>To</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </label>
+            <div class="form-group">
+                <div>Lokalizacja</div>
+                <input type="text" class="form-control" id="localzation_input" placeholder="Podaj miasto...">
+            </div>
+            <div class="form-group">
+                <div>Płeć</div>
+                <select class="form-control" id="gender">
+                    <option selected>Kobieta</option>
+                    <option>Mężczyzna</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div>Preferencje</div>
+                <div>
+                        <input class="checkbox" id="eighteen-plus" type="checkbox" value="value1">
+                        <label for="eighteen-plus">18+</label>
+                        <input class="checkbox" id="sexting" type="checkbox" value="value1">
+                        <label for="sexting">Sexting</label>
+                        <input class="checkbox" id="lookfor-boys" type="checkbox" value="value1">
+                        <label for="lookfor-boys">Mężczyźni</label>
+                        <input class="checkbox" id="lookfor-girls" type="checkbox" value="value1">
+                        <label for="lookfor-girls">Kobiety</label>
+                </div>
+            </div>
+        </div>
+    </aside>
     <section id="content">
         <div class="container">
+            <div class="form-group m-3">
+                <label for="tags_input">Szukaj tagów
+                    <input type="text" name="tags" id="tags_input" class="form-control" data-role="tagsinput">
+                </label>
+                <button class="button --default --primary --hover">Szukaj</button>
+            </div>
             <div class="card card-custom bg-white border-white border-0 m-3">
                 <div class="card-custom-img"
                      style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
@@ -89,9 +142,19 @@
         toggler.addEventListener('click', function () {
             sidebar.classList.toggle('is-active')
         })
+
+        var filtersToggler = document.getElementsByClassName('filters__toggler');
+        var filtersSidebar = document.getElementById('sidebar__filters');
+
+        for (var i =0; i < filtersToggler.length; i++) {
+            filtersToggler[i].addEventListener('click', function () {
+                filtersSidebar.classList.toggle('is-active');
+            });
+        }
     })
-
-
 </script>
+<script type="text/javascript" src="js/jquery.slim.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-tagsinput.min.js"></script>
 </body>
 </html>
