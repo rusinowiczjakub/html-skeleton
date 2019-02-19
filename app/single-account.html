@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snapme.io</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="scss/partials/_buttons.scss">
+</head>
+<body>
+<div id="main-wrapper">
+    <div class="loading__container" id="loader">
+        <div class="loader__overlay">
+            <div class="Loader"></div>
+        </div>
+    </div>
+    <nav>
+        <div class="button --default --round" id="nav__toggler">
+            <i style="color: #0023ff" class="fal fa-bars"></i>
+        </div>
+    </nav>
+
+    <aside id="sidebar__left">
+        <ul>
+            <li class="--tablet --desktop">
+                <div>Logo</div>
+            </li>
+            <li><i class="fal fa-home"></i></li>
+            <li><i class="fal fa-user-alt"></i></li>
+            <li><i class="fal fa-search"></i></li>
+        </ul>
+    </aside>
+    <aside id="sidebar__right">
+        <ul>
+            <li>Snapchat <i class="fab fa-snapchat fa-3x"></i></li>
+            <li>Instagram <i class="fab fa-instagram fa-3x"></i></li>
+            <li>Twitter <i class="fab fa-twitter fa-3x"></i></li>
+        </ul>
+    </aside>
+    <!--ONLY IF ACCOUNTS PAGE-->
+    <aside id="sidebar__filters">
+        <div class="filters__toggler --desktop --mobile --tablet"><i class="fal fa-filter"></i></div>
+        <div class="form-group" id="ageGroup">
+            <div>Wiek</div>
+            <label>
+                <select class="form-control" id="ageFrom">
+                    <option selected>From</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </label>
+            <label>
+                <select class="form-control" id="ageTo">
+                    <option selected>To</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </label>
+            <div class="form-group">
+                <div>Lokalizacja</div>
+                <input type="text" class="form-control" id="localzation_input" placeholder="Podaj miasto...">
+            </div>
+            <div class="form-group">
+                <div>Płeć</div>
+                <select class="form-control" id="gender">
+                    <option selected>Kobieta</option>
+                    <option>Mężczyzna</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div>Typ konta</div>
+                <select class="form-control" id="account_type">
+                    <option selected>Snapchat</option>
+                    <option value="1">Instagram</option>
+                    <option value="2">Twitter</option>
+                    <option value="3">Facebook</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div>Preferencje</div>
+                <div>
+                    <input class="checkbox" id="eighteen-plus" type="checkbox" value="value1">
+                    <label for="eighteen-plus">18+</label>
+                    <input class="checkbox" id="sexting" type="checkbox" value="value1">
+                    <label for="sexting">Sexting</label>
+                    <input class="checkbox" id="lookfor-boys" type="checkbox" value="value1">
+                    <label for="lookfor-boys">Mężczyźni</label>
+                    <input class="checkbox" id="lookfor-girls" type="checkbox" value="value1">
+                    <label for="lookfor-girls">Kobiety</label>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!--ONLY IF ACCOUNTS PAGE-->
+    <section id="content">
+    </section>
+</div>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        var loader = document.getElementById('loader');
+        var toggler = document.getElementById('nav__toggler');
+        var sidebar = document.getElementById('sidebar__right');
+        console.log(sidebar.style);
+        setTimeout(function () {
+            loader.style.opacity = '0';
+            loader.style.display = 'none'
+        }, 2500);
+
+        toggler.addEventListener('click', function () {
+            sidebar.classList.toggle('is-active')
+        })
+
+        var filtersToggler = document.getElementsByClassName('filters__toggler');
+        var filtersSidebar = document.getElementById('sidebar__filters');
+
+        for (var i = 0; i < filtersToggler.length; i++) {
+            filtersToggler[i].addEventListener('click', function () {
+                filtersSidebar.classList.toggle('is-active');
+            });
+        }
+    })
+</script>
+<script type="text/javascript" src="js/jquery.slim.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-tagsinput.min.js"></script>
+</body>
+</html>

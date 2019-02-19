@@ -28,7 +28,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.slim.js', 'node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js'])
+    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.slim.js'])
         .pipe(gulp.dest("app/js"))
         .pipe(browserSync.reload({
             stream: true

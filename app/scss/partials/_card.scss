@@ -1,6 +1,8 @@
 .card-custom {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  min-height: 350px;
+  position: relative;
 
   i {
     color: #c1c1c1;
@@ -10,35 +12,40 @@
     display: block;
     flex: 0;
   }
+
+  &:hover {
+    .card-custom-img::after {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
 }
 
 .card-custom-img {
-  height: 200px;
-  min-height: 200px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  height: 100%;
+  width: 100%;
   border-color: inherit;
+  position: absolute;
+  z-index: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
 
 /* First border-left-width setting is a fallback */
 .card-custom-img::after {
+  top: 0;
   position: absolute;
   content: '';
-  top: 161px;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-top-width: 40px;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 545px;
-  border-left-width: calc(575px - 5vw);
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: inherit;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 35, 255, .4);
+  transition: 0.3s;
+  z-index: 1;
+
 }
 
 .card-custom-avatar img {
@@ -49,4 +56,12 @@
   left: 1.25rem;
   width: 100px;
   height: 100px;
+}
+
+.card-footer {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  background: none;
 }
